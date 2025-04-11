@@ -1,23 +1,26 @@
 <!-- Page heading -->
-<h2>Login</h2>
+<h2>Welcome Back!</h2>
+
+<!-- Subheading for encouragement -->
+<p>Log in to continue tracking your workouts and hitting your goals.</p>
 
 <!-- Login form that submits to /auth/login -->
 <form method="POST" action="/auth/login">
   <!-- Username input field -->
   <div class="mb-3">
     <label>Username</label>
-    <input class="form-control" type="text" name="username" required>
+    <input class="form-control" type="text" name="username" placeholder="Enter your username" required>
   </div>
 
   <!-- Password input field -->
   <div class="mb-3">
     <label>Password</label>
-    <input class="form-control" type="password" name="password" required>
+    <input class="form-control" type="password" name="password" placeholder="Enter your password" required>
   </div>
 
   <!-- Submit button -->
-  <button class="btn btn-primary" type="submit">Login</button>
+  <button class="btn btn-primary" type="submit">Log In</button>
 </form>
 
 <!-- Optional GitHub login button -->
-<a href="/auth/github" class="btn btn-dark mt-3">Login with GitHub</a>
+<a href="/auth/github" class="btn btn-dark mt-3">Sign in with GitHub</a>

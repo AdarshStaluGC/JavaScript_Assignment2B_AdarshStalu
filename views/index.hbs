@@ -1,18 +1,15 @@
-<!-- Page title -->
-<h1 class="text-center">Welcome to Workout Tracker</h1>
+<!-- Hero section with background image -->
+<div class="hero-section">
+  <!-- Main welcome heading -->
+  <h1>Crush Your Goals with Workout Tracker </h1>
 
-<!-- Short description below the title -->
-<p class="text-center">Log and manage your fitness journey easily.</p>
+  <!-- Subheading to inspire users -->
+  <p>Track your progress, stay motivated, and own your fitness journey.</p>
 
-<!-- If the user is logged in, show a button to go to their dashboard -->
-{{#if user}}
-  <div class="text-center mt-4">
-    <a class="btn btn-primary" href="/workouts">Go to Dashboard</a>
-  </div>
-
-<!-- If the user is not logged in, show a button to register -->
-{{else}}
-  <div class="text-center mt-4">
-    <a class="btn btn-success" href="/auth/register">Get Started</a>
-  </div>
-{{/if}}
+  <!-- Conditional CTA based on login status -->
+  {{#if user}}
+    <a class="btn btn-custom mt-3" href="/workouts">My Workout Plans</a>
+  {{else}}
+    <a class="btn btn-custom mt-3" href="/auth/register">Start Your Journey</a>
+  {{/if}}
+</div>

@@ -1,20 +1,23 @@
 <!-- Page heading -->
-<h2>Register</h2>
+<h2>Create Your Account</h2>
+
+<!-- Subheading for motivation -->
+<p>Join us today and start logging your fitness progress effortlessly!</p>
 
 <!-- Registration form that submits to /auth/register -->
 <form method="POST" action="/auth/register">
   <!-- Username input field -->
   <div class="mb-3">
-    <label>Username</label>
-    <input class="form-control" type="text" name="username" required>
+    <label>Choose a Username</label>
+    <input class="form-control" type="text" name="username" placeholder="Pick a unique username" required>
   </div>
 
   <!-- Password input field -->
   <div class="mb-3">
-    <label>Password</label>
-    <input class="form-control" type="password" name="password" required>
+    <label>Create a Password</label>
+    <input class="form-control" type="password" name="password" placeholder="Set a strong password" required>
   </div>
 
   <!-- Submit button -->
-  <button class="btn btn-success" type="submit">Register</button>
+  <button class="btn btn-success" type="submit">Sign Up</button>
 </form>
