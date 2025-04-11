@@ -1,0 +1,11 @@
+<h1 class="text-center">Welcome to Workout Tracker</h1>
+<p class="text-center">Log and manage your fitness journey easily.</p>
+{{#if user}}
+  <div class="text-center mt-4">
+    <a class="btn btn-primary" href="/workouts">Go to Dashboard</a>
+  </div>
+{{else}}
+  <div class="text-center mt-4">
+    <a class="btn btn-success" href="/auth/register">Get Started</a>
+  </div>
+{{/if}}

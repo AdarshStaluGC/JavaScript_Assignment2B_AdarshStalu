@@ -1,0 +1,16 @@
+<h2>Add Workout</h2>
+<form method="POST" action="/workouts/add">
+  <div class="mb-3">
+    <label>Exercise</label>
+    <input class="form-control" type="text" name="exercise" required>
+  </div>
+  <div class="mb-3">
+    <label>Duration (minutes)</label>
+    <input class="form-control" type="number" name="duration" required>
+  </div>
+  <div class="mb-3">
+    <label>Notes</label>
+    <textarea class="form-control" name="notes"></textarea>
+  </div>
+  <button class="btn btn-success" type="submit">Save Workout</button>
+</form>

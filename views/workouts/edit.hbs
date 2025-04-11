@@ -1,0 +1,16 @@
+<h2>Edit Workout</h2>
+<form method="POST" action="/workouts/edit/{{workout._id}}">
+  <div class="mb-3">
+    <label>Exercise</label>
+    <input class="form-control" type="text" name="exercise" value="{{workout.exercise}}" required>
+  </div>
+  <div class="mb-3">
+    <label>Duration (minutes)</label>
+    <input class="form-control" type="number" name="duration" value="{{workout.duration}}" required>
+  </div>
+  <div class="mb-3">
+    <label>Notes</label>
+    <textarea class="form-control" name="notes">{{workout.notes}}</textarea>
+  </div>
+  <button class="btn btn-primary" type="submit">Update</button>
+</form>

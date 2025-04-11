@@ -1,0 +1,30 @@
+<h2>Your Workouts</h2>
+
+<form class="row mb-4" method="GET" action="/workouts">
+  <div class="col-md-10">
+    <input class="form-control" type="text" name="q" placeholder="Search exercise..." value="{{keyword}}">
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-outline-primary w-100" type="submit">Search</button>
+  </div>
+</form>
+
+<a href="/workouts/add" class="btn btn-primary mb-3">Add Workout</a>
+
+{{#each workouts}}
+  <div class="card mb-2">
+    <div class="card-body">
+      <h5>{{exercise}} - {{duration}} mins</h5>
+      <p>{{notes}}</p>
+      <small>{{date}}</small>
+      <div class="mt-2">
+        <a href="/workouts/edit/{{_id}}" class="btn btn-sm btn-warning">Edit</a>
+        <form method="POST" action="/workouts/delete/{{_id}}" style="display:inline;">
+          <button class="btn btn-sm btn-danger" onclick="return confirm('Delete this workout?')">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{{else}}
+  <p>No workouts found.</p>
+{{/each}}
