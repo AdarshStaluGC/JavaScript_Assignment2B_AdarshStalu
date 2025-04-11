@@ -1,16 +1,26 @@
+<!-- Heading for the edit workout page -->
 <h2>Edit Workout</h2>
+
+<!-- Form to update an existing workout; submits a POST request to the edit route with workout ID -->
 <form method="POST" action="/workouts/edit/{{workout._id}}">
+  <!-- Input field pre-filled with the current exercise name -->
   <div class="mb-3">
     <label>Exercise</label>
     <input class="form-control" type="text" name="exercise" value="{{workout.exercise}}" required>
   </div>
+
+  <!-- Input field pre-filled with the current workout duration -->
   <div class="mb-3">
     <label>Duration (minutes)</label>
     <input class="form-control" type="number" name="duration" value="{{workout.duration}}" required>
   </div>
+
+  <!-- Textarea pre-filled with the current workout notes -->
   <div class="mb-3">
     <label>Notes</label>
     <textarea class="form-control" name="notes">{{workout.notes}}</textarea>
   </div>
+
+  <!-- Button to submit the form and update the workout -->
   <button class="btn btn-primary" type="submit">Update</button>
 </form>

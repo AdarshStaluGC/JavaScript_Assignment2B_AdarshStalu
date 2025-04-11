@@ -1,24 +1,40 @@
+<!-- Page heading -->
 <h2>Your Workouts</h2>
 
+<!-- Search form: allows user to filter workouts by exercise name -->
 <form class="row mb-4" method="GET" action="/workouts">
   <div class="col-md-10">
+    <!-- Text input for search keyword, pre-filled with the current search term -->
     <input class="form-control" type="text" name="q" placeholder="Search exercise..." value="{{keyword}}">
   </div>
   <div class="col-md-2">
+    <!-- Submit button for the search form -->
     <button class="btn btn-outline-primary w-100" type="submit">Search</button>
   </div>
 </form>
 
+<!-- Link to the "Add Workout" page -->
 <a href="/workouts/add" class="btn btn-primary mb-3">Add Workout</a>
 
+<!-- Loop through each workout and display it as a card -->
 {{#each workouts}}
   <div class="card mb-2">
     <div class="card-body">
+      <!-- Show exercise name and duration -->
       <h5>{{exercise}} - {{duration}} mins</h5>
+      
+      <!-- Show notes about the workout -->
       <p>{{notes}}</p>
+      
+      <!-- Show the date of the workout -->
       <small>{{date}}</small>
+      
+      <!-- Buttons to edit or delete the workout -->
       <div class="mt-2">
+        <!-- Link to the edit page for this workout -->
         <a href="/workouts/edit/{{_id}}" class="btn btn-sm btn-warning">Edit</a>
+        
+        <!-- Delete button in a form, with confirmation prompt -->
         <form method="POST" action="/workouts/delete/{{_id}}" style="display:inline;">
           <button class="btn btn-sm btn-danger" onclick="return confirm('Delete this workout?')">Delete</button>
         </form>
@@ -26,5 +42,6 @@
     </div>
   </div>
 {{else}}
+  <!-- Message to display if no workouts exist -->
   <p>No workouts found.</p>
 {{/each}}

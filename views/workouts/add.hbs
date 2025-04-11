@@ -1,16 +1,26 @@
+<!-- Heading for the workout form page -->
 <h2>Add Workout</h2>
+
+<!-- Form to add a new workout; sends data using POST to /workouts/add -->
 <form method="POST" action="/workouts/add">
+  <!-- Input field for exercise name -->
   <div class="mb-3">
     <label>Exercise</label>
     <input class="form-control" type="text" name="exercise" required>
   </div>
+
+  <!-- Input field for workout duration in minutes -->
   <div class="mb-3">
     <label>Duration (minutes)</label>
     <input class="form-control" type="number" name="duration" required>
   </div>
+
+  <!-- Textarea for optional workout notes -->
   <div class="mb-3">
     <label>Notes</label>
     <textarea class="form-control" name="notes"></textarea>
   </div>
+
+  <!-- Submit button to save the workout -->
   <button class="btn btn-success" type="submit">Save Workout</button>
 </form>

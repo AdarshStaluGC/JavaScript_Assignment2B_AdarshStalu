@@ -1,4 +1,6 @@
+// Load environment variables from .env
 require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -9,47 +11,47 @@ const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-ac
 const exphbs = require('express-handlebars');
 const Handlebars = require('handlebars');
 
-// Routes
+// Route files
 const indexRouter = require('./routes/index');
 const workoutRouter = require('./routes/workouts');
 const authRouter = require('./routes/auth');
 
-// Initialize app
+// Create Express app
 const app = express();
 
-// MongoDB connection
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error(err));
+  .then(() => console.log('✅ Connected to MongoDB'))
+  .catch(err => console.error('❌ MongoDB connection error:', err));
 
-// View engine setup (Handlebars)
+// Set up Handlebars view engine
 app.engine('hbs', exphbs.engine({
   extname: 'hbs',
   defaultLayout: 'main',
-  handlebars: allowInsecurePrototypeAccess(Handlebars)
+  handlebars: allowInsecurePrototypeAccess(Handlebars),
 }));
 app.set('view engine', 'hbs');
 
-// Middleware
+// Body parser & static files
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Sessions
+// Set up session
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
 }));
 
 // Flash messages
 app.use(flash());
 
-// Passport setup
+// Initialize Passport (for auth)
 require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Flash + user to views
+// Global variables for templates
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
@@ -57,13 +59,13 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routes
+// Use routes
 app.use('/', indexRouter);
 app.use('/workouts', workoutRouter);
 app.use('/auth', authRouter);
 
-// Start server
+// Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
 });

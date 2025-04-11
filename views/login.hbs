@@ -1,13 +1,23 @@
+<!-- Page heading -->
 <h2>Login</h2>
+
+<!-- Login form that submits to /auth/login -->
 <form method="POST" action="/auth/login">
+  <!-- Username input field -->
   <div class="mb-3">
     <label>Username</label>
     <input class="form-control" type="text" name="username" required>
   </div>
+
+  <!-- Password input field -->
   <div class="mb-3">
     <label>Password</label>
     <input class="form-control" type="password" name="password" required>
   </div>
+
+  <!-- Submit button -->
   <button class="btn btn-primary" type="submit">Login</button>
 </form>
+
+<!-- Optional GitHub login button -->
 <a href="/auth/github" class="btn btn-dark mt-3">Login with GitHub</a>
