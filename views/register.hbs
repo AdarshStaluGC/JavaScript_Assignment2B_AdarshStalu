@@ -1,23 +1,38 @@
-<!-- Page heading -->
-<h2>Create Your Account</h2>
+<!-- Hero section with background image behind registration content -->
+<div class="hero-section" style="
+  background: url('/images/background.jpg') center center / cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+">
 
-<!-- Subheading for motivation -->
-<p>Join us today and start logging your fitness progress effortlessly!</p>
+  <!-- Page heading -->
+  <h2>Create Your Account</h2>
 
-<!-- Registration form that submits to /auth/register -->
-<form method="POST" action="/auth/register">
-  <!-- Username input field -->
-  <div class="mb-3">
-    <label>Choose a Username</label>
-    <input class="form-control" type="text" name="username" placeholder="Pick a unique username" required>
-  </div>
+  <!-- Subheading for motivation -->
+  <p>Join us today and start logging your fitness progress effortlessly!</p>
 
-  <!-- Password input field -->
-  <div class="mb-3">
-    <label>Create a Password</label>
-    <input class="form-control" type="password" name="password" placeholder="Set a strong password" required>
-  </div>
+  <!-- Registration form -->
+  <form method="POST" action="/auth/register" style="max-width: 400px; width: 100%;">
+    <!-- Username input field -->
+    <div class="mb-3 text-start">
+      <label class="form-label">Choose a Username</label>
+      <input class="form-control" type="text" name="username" placeholder="Pick a unique username" required>
+    </div>
 
-  <!-- Submit button -->
-  <button class="btn btn-success" type="submit">Sign Up</button>
-</form>
+    <!-- Password input field -->
+    <div class="mb-3 text-start">
+      <label class="form-label">Create a Password</label>
+      <input class="form-control" type="password" name="password" placeholder="Set a strong password" required>
+    </div>
+
+    <!-- Submit button -->
+    <button class="btn btn-success w-100" type="submit">Sign Up</button>
+  </form>
+
+</div>

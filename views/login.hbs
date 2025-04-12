@@ -1,26 +1,41 @@
-<!-- Page heading -->
-<h2>Welcome Back!</h2>
+<!-- Hero section with background image behind all content -->
+<div class="hero-section" style="
+  background: url('/images/background.jpg') center center / cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+">
 
-<!-- Subheading for encouragement -->
-<p>Log in to continue tracking your workouts and hitting your goals.</p>
+  <!-- Page heading -->
+  <h2>Welcome Back!</h2>
 
-<!-- Login form that submits to /auth/login -->
-<form method="POST" action="/auth/login">
-  <!-- Username input field -->
-  <div class="mb-3">
-    <label>Username</label>
-    <input class="form-control" type="text" name="username" placeholder="Enter your username" required>
-  </div>
+  <!-- Subheading for encouragement -->
+  <p>Log in to continue tracking your workouts and hitting your goals.</p>
 
-  <!-- Password input field -->
-  <div class="mb-3">
-    <label>Password</label>
-    <input class="form-control" type="password" name="password" placeholder="Enter your password" required>
-  </div>
+  <!-- Login form that submits to /auth/login -->
+  <form method="POST" action="/auth/login" style="max-width: 400px; width: 100%;">
+    <!-- Username input field -->
+    <div class="mb-3 text-start">
+      <label class="form-label">Username</label>
+      <input class="form-control" type="text" name="username" placeholder="Enter your username" required>
+    </div>
 
-  <!-- Submit button -->
-  <button class="btn btn-primary" type="submit">Log In</button>
-</form>
+    <!-- Password input field -->
+    <div class="mb-3 text-start">
+      <label class="form-label">Password</label>
+      <input class="form-control" type="password" name="password" placeholder="Enter your password" required>
+    </div>
 
-<!-- Optional GitHub login button -->
-<a href="/auth/github" class="btn btn-dark mt-3">Sign in with GitHub</a>
+    <!-- Submit button -->
+    <button class="btn btn-primary w-100" type="submit">Log In</button>
+  </form>
+
+  <!-- Optional GitHub login button -->
+  <a href="/auth/github" class="btn btn-dark mt-3">Sign in with GitHub</a>
+
+</div>
