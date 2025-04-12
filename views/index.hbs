@@ -1,15 +1,21 @@
-<!-- Hero section with background image -->
-<div class="hero-section">
+<!-- Hero section with inline background image -->
+<div class="hero-section" style="background: url('/images/background.jpg') center center / cover no-repeat; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px;">
+
   <!-- Main welcome heading -->
-  <h1>Crush Your Goals with Workout Tracker </h1>
+  <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 20px;">
+    Crush Your Goals with Workout Tracker
+  </h1>
 
   <!-- Subheading to inspire users -->
-  <p>Track your progress, stay motivated, and own your fitness journey.</p>
+  <p style="font-size: 1.5rem; margin-bottom: 30px;">
+    Track your progress, stay motivated, and own your fitness journey.
+  </p>
 
   <!-- Conditional CTA based on login status -->
   {{#if user}}
-    <a class="btn btn-custom mt-3" href="/workouts">My Workout Plans</a>
+    <a class="btn btn-dark mt-3" href="/workouts">My Workout Plans</a>
   {{else}}
-    <a class="btn btn-custom mt-3" href="/auth/register">Start Your Journey</a>
+    <a class="btn btn-dark mt-3" href="/auth/register">Start Your Journey</a>
   {{/if}}
+
 </div>
